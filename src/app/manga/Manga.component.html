@@ -1,0 +1,29 @@
+
+	<div id="contentWrapper">
+			<div class="itemWrapper">
+				<h2>On discount</h2>
+				<div *ngFor="let manga of mangaList" class="itemList">
+					<div class="item">
+						<figure class="itemImg">
+							<img src="{{manga.imgUrl}}" alt="Product cover" />
+							<figcaption class="itemTitle unselectable"><h3>{{manga.title}}</h3></figcaption>
+						</figure>
+						<span class="discountPrice">{{manga.price}}</span>
+						<div class="priceAndRatings">
+							<span class="ratings">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+							</span>
+							<span class="price" >{{manga.price}}</span>
+						</div>
+						<a (click)="HandleCart(manga.number)" class="viewMore unselectable">
+							Add to cart <i class="fas fa-shopping-cart"></i>
+						</a>
+					</div>
+			</div>
+		<div class="cleaner"></div>	
+	
+	

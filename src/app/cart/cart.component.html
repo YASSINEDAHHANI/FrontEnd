@@ -1,0 +1,27 @@
+
+<div id="contentWrapper">
+    <div class="itemWrapper">
+        <div *ngFor="let m of selectedManga" class="itemList">
+            <div class="item">
+                <figure class="itemImg">
+                    <img src="{{m.imgUrl}}" alt="Product cover" />
+                    <figcaption class="itemTitle unselectable"><h3>{{m.title}}</h3></figcaption>
+                </figure>
+                <div class="priceAndRatings">
+                    <span class="ratings">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </span>
+                    <span class="price" >{{m.price}}</span>
+                    <a (click)="HandelDelete(m.number)" class="viewMore unselectable">
+                        Delete <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+    </div>
+<div class="cleaner"></div>	
+
+

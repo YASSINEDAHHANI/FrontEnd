@@ -1,0 +1,814 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+html{
+	height: 100%;
+	width: 100%;
+}
+body{
+	height: 100%;
+	width: 1423px;
+	margin: 0px auto;
+	font-family: 'PT Sans', sans-serif;
+	color: #000;
+	overflow-x: hidden;
+}
+h2,h3{
+	color: #0C0E22;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+
+.cleaner{
+	clear:both;
+}
+
+input[type="search"]::-webkit-search-cancel-button {display: none;}
+
+/* ----------------------------------------------------------- HOME ------------------------------------------------------- */
+#contentWrapper{
+	width: 95%;
+	margin: 0px auto;
+}
+
+/* MAIN */
+#homeMain{
+	float: left;
+	width:69.5%;
+	margin: 30px 0.5%;
+}
+
+.itemWrapper{
+	width: 99%;
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+
+.itemWrapper h2{
+	color: #0C0E22;
+	font-size: 26px;
+	margin-bottom: 10px;
+}
+
+.itemList{
+	width: 100%;
+}
+
+.itemList .item{
+	float: left;
+	width: 24.5%;
+	border: 1px solid #ececec;
+	margin-left: 2px;
+	text-align: center;
+}
+
+.itemList .item:hover{
+	border: 1px solid #c7c7c7;
+	box-shadow: 1px 1px 5px #808080;
+}
+
+.itemImg{
+	width: 205px;
+	margin:0px auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+}
+.itemImg img{
+	cursor: pointer;
+}
+
+.itemTitle h3{
+	color: #000;
+	font-size: 17px;
+	font-weight: normal;
+	padding-top: 5px;
+	box-sizing: border-box;
+}
+.itemTitle:hover{
+	cursor: pointer;
+	color: #505050;
+}
+
+.discountPrice{
+	display: block;
+	text-align: right;
+	font-size: 16px;
+	margin-top: 10px;
+	padding-right: 10px;
+	text-decoration: line-through;
+	color: #585858;
+}
+
+.priceAndRatings{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.ratings{
+	margin-left: 10px;
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.ratings i{
+	/*color: #ff3636;*/
+	color: #FF0080;
+}
+
+.price{
+	font-size: 26px;
+	/*color: #FF0000;*/
+	color: #FF0080;
+	margin-right: 9px;
+}
+
+.viewMore{
+	float: right;
+	width: 100px;
+	height: 25px;
+	margin-top: 10px;
+	margin-right: 8px;
+	margin-bottom: 10px;
+	box-shadow: 0.5px 0.5px 2px #808080;
+	padding: 5px;
+	/*background-color: #86b7fa;*/
+	background-color:#fb0000;
+	color: #FFF;
+	cursor: default;
+}
+
+.viewMore:hover{
+	/*background-color: #69a6fb;*/
+	background-color:#237fff;
+	cursor: pointer;
+}
+
+
+.nonDiscountedItem .priceAndRatings{
+	margin-top: 30px;
+}
+.nonDiscountedItem .itemImg .itemTitle{
+	height: 30px;
+}
+/* SIDEBAR */
+
+#sidebar{
+	float: right;
+	width: 28%;
+	margin: 30px 0.5%;
+}
+
+.sidebarSection{
+	width: 100%;
+	margin-top: 50px;
+	padding-bottom: 20px;
+	border-left: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+}
+.sidebarSection:hover{
+	border-left: 1px solid #d2d2d2;
+	border-bottom: 1px solid #d2d2d2;
+	/*box-shadow: 1px 0px 5px #808080;*/
+
+}
+
+.sidebarSection h3{
+	font-size:24px;
+	color: #0C0E22;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+#newsWrapper{
+	text-align: center;
+}
+
+.news{
+	width:95%;
+	margin: 0px auto;
+	margin-bottom: 20px;
+}
+.news p{
+	font-size: 18px;
+	color: #00274e;
+	text-transform: capitalize;
+}
+.news p:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#upcomingMangas{
+	position: relative;
+}
+#upcomingMangas h4{
+	margin-top: 20px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	/*color: #ff2400;*/
+	color:#FF0080;
+	font-size: 20px;
+}
+#upcomingMangas ul{
+	margin-left: 40px;
+}
+#upcomingMangas ul li{
+	margin: 2px 0px;
+	color: #383838;
+}
+
+#upcomingMangas div:first-child{
+	position: absolute;
+	right:-120px;
+	top: -20px;
+	width: 200px;
+	height: 351px;
+}
+#upcomingMangas div:first-child img{
+	width: 200px;
+}
+
+
+/* ------------------------------------------------------  				SHOP			------------------------------ */
+
+#shopMain{
+	width: 98%;
+	margin: 0px auto;
+
+}
+
+#filterWrapper{
+	width: 21%;
+	float:left;
+	margin-top: 35px;
+	padding-bottom: 30px;
+	border-right: 1px solid #d4d4d4;
+	border-bottom: 1px solid #d4d4d4;
+	
+	/*background: red;*/
+}
+#productsWrapper{
+	width:78%;
+	float:left;
+	margin-top: 25px;
+	/*background: black;*/
+}
+
+#shopTitle{
+	width: 100%;
+	text-align:center;
+	margin-bottom: 40px;
+}
+#shopTitle h1{
+	font-size: 32px;
+}
+
+.shopNav{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.shopNav div{
+	width: 275px;
+}
+
+.productFilter{
+	display: flex;
+	align-items: center;
+}
+
+.productFilter span{
+	margin: 0px 10px;
+	color: #585858;
+	font-size: 18px;
+}
+.productFilter select{
+	height: 30px;
+	width: 50px;
+	font-size: 16px;
+	border: 3px solid #b3b3b3;
+}
+.productFilter select:focus{
+	border: 3px solid #FF0080;
+	outline: none;
+}
+
+.shopNav ul{
+	display:flex;
+}
+
+.shopNav ul li{
+	display: block;
+	width: 25px;
+	height: 25px;
+	border: 1px solid #969696;
+	border-radius: 5px;
+	padding-top: 4px;
+	padding-left: 2px;
+	padding-right: 2px;
+	margin: 0px 3px;
+	cursor: pointer;
+	text-align: center;
+	color: #4a4a4a;
+	
+	/*unselectable*/
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+   -moz-user-select: none;     /* Firefox all */
+   -ms-user-select: none;
+}
+.shopNav .currentPage{
+	color: #FFF;
+	background-color: #FF0080;
+	border: none;
+	width: 26px;
+	height: 26px;
+}
+.shopNav .next{
+	color: #FFF;
+	background-color: #FF0080;
+	/*border: 1px solid #FF0080;*/
+}
+
+.productFilter .productSort{
+	width: 200px;
+}
+
+
+#filterWrapper h3{
+	text-align: center;
+	font-size: 26px;
+}
+
+
+.filter h4{
+	font-size: 22px;
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-bottom: 20px;
+}
+
+.myCheckbox {
+	position: relative;
+	margin-left: 25px;
+	margin-bottom: 8px;
+	padding-left: 22px;
+	display: flex;
+	align-items: center;
+}
+
+.myCheckbox input{
+	position: absolute;
+	opacity: 0;
+	z-index: 2;
+	top: 0px;
+	left: 0px;
+	width: 28px;
+	height: 28px;
+	cursor: pointer;
+}
+.myCheckbox label{
+	margin-left: 15px;
+	font-size: 18px;
+}
+.myCheckbox .customCheckbox{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 22px;
+	height: 22px;
+	border: 3px solid #808080;
+}
+.myCheckbox .customCheckbox i{
+	margin-left: 4px;
+	margin-top: 4px;
+	font-size: 14px;
+	color: #FF0080;
+	display: none;
+}
+.myCheckbox input:checked ~ .customCheckbox{
+	border: 3px solid #FF0080;
+}
+.myCheckbox input:checked ~ .customCheckbox i{
+	display: block;
+}
+
+/* --------------------------------------------------------- FREE  ARTWORK -------------------------------------------- */
+#artworkMain{
+	width: 98%;
+	margin:35px auto;
+}
+
+#artworkMain h1{
+	text-align: center;
+	font-size: 32px;
+	color: #0C0E22;
+}
+
+#artworkWrapper{
+	width: 100%;
+	border-top:1px solid #eaeaeac9;
+	border-bottom:1px solid #eaeaeac9;
+	padding: 20px 0px;
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.artworkItem {
+	position:relative;
+	margin: 10px 10px;
+	box-shadow:0px 0px 5px #000;
+}
+.artworkItem img{
+	display: block;
+}
+
+.imageOverlay{
+	visibility: hidden;
+	position:absolute;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	top:0px;
+	left:0px;
+	width:100%;
+	height: 100%;
+	background:rgba(0,0,0,0.2);
+
+}
+.artworkItem:hover .imageOverlay {
+	visibility: visible;
+	cursor: zoom-in;
+}
+
+.imageOverlay .overlayTop{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+.imageOverlay .overlayTop i{
+	display:block;
+	color: #FFF;
+	padding: 10px;
+	font-size: 24px;
+	cursor: pointer;
+}
+.imageOverlay .overlayTop i:hover{
+	color: #FF0080;
+}
+
+.imageOverlay .overlayBottom{
+	width: 100%;
+	background: rgba(0,0,0,0.7);
+	box-sizing: border-box;
+	padding:5px 10px;
+	cursor: default;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+}
+
+.imageOverlay .overlayBottom .overlayBottomLeft{
+	color: #FFF;
+	font-size: 14px;
+}
+.imageOverlay .overlayBottom .overlayBottomLeft span{
+	margin-right: 5px;
+}
+.imageOverlay .overlayBottom .overlayBottomLeft p{
+	display:inline;
+}
+.imageOverlay .overlayBottom .overlayBottomRight i{
+	color: #FFF;
+	font-size: 24px;
+}
+.imageOverlay .overlayBottom .overlayBottomRight i:hover{
+	color: #FF0080;
+	cursor: pointer;
+}
+
+#loadMore{
+	padding: 8px;
+	border: 3px solid #808080;
+	margin-top: 5px;
+}
+#loadMore p{
+	color: #525252;
+}
+#loadMore i{
+	margin-bottom: 5px;
+	margin-left: 5px;
+	font-size: 22px;
+	color: #808080;
+}
+#loadMore:hover{
+	border: 3px solid #FF0080;
+	cursor: pointer;
+}
+#loadMore:hover i{
+	color:#FF0080;
+}
+#loadMore:hover p{
+	color: #FF0080;
+ }
+ 
+ /* ------------------------------------------------------------------ CONTACT ------------------------------------------ */
+#contactMain{
+	width: 98%;
+	margin: 20px auto;
+	text-align: center;
+}
+ 
+#contactWrapper{
+	width: 85%;
+	margin: 0px auto;
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	border: 3px solid #dadada;
+}
+#info{
+	width: 40%;
+	font-size: 20px;
+}
+#info h2{
+	font-size: 32px;
+	text-align: center;
+ }
+#workTime{
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+#workTime h3{
+	margin-bottom: 5px;
+}
+#workTime p span{
+	color: #FF0080;
+	font-weight: bold;
+}
+#contactInfo span{
+	font-weight: normal;
+}
+#contactInfo .contactSocial{
+	color: #000;
+	font-weight: normal;
+}
+#contactInfo .contactSocial:hover{
+	text-decoration: underline;
+	color: #FF0080;
+}
+
+#location{
+	margin: 0px auto;
+	margin-top: 20px;
+	width: 95%;
+	height: 300px;
+}
+#location iframe{
+	width: 100%;
+	height: inherit;
+}
+
+#customerShopReview{
+	width: 60%;
+	border-left: 1px solid #dadada;
+	box-sizing: border-box;
+	padding-top: 20px;
+}
+
+#customerShopReview form{
+	width: 80%;
+	margin: 30px auto;
+}
+#customerShopReview form input{
+	display: block;
+	width: 70%;
+	height: 40px;
+	margin: 10px auto;
+	font-size: 18px;
+	box-sizing: border-box;
+	padding: 5px;
+	color: #525252;
+}
+#customerShopReview form input:focus{
+	outline: 2px solid #FF0080;
+}
+#customerShopReview form #subject{
+	width: 100%;
+	margin-top: 20px;
+}
+#customerShopReview form textarea{
+	width: 100%;
+	height: 300px;
+	font-size: 18px;
+	box-sizing: border-box;
+	padding: 5px;
+	color: #525252;
+}
+#customerShopReview form textarea:focus{
+	outline: 2px solid #FF0080;
+}
+
+#customerShopReview form input[type="submit"]{
+	width: 60%;
+	background-color: #FFF;
+	border: none;
+	outline: 3px solid #808080;
+	color: #525252;
+}
+#customerShopReview form input[type="submit"]:hover{
+	outline: 3px solid #FF0080;
+	color: #FF0080;
+}
+.contactSection{
+	text-align:center;
+	box-sizing: border-box;
+	padding: 10px 0px;
+}
+
+
+/*------------------------------------------------------------- ABOUT ------------------------------------------------------ */
+
+
+#aboutMain{
+	width: 80%;
+	box-sizing: border-box;
+	border: 3px solid #dadada;
+	margin: 50px auto;
+	padding: 40px 50px;
+	display: flex;
+	justify-content:space-between;
+}
+
+#profileImage{
+	width: 28%;
+}
+#profileImage img{
+	width: 100%;
+	box-shadow: 0px 0px 15px #808080;
+}
+#biography{
+	width: 70%;
+}
+#biography h1{
+	text-align: center;
+	margin-bottom: 20px;
+}
+#biography p{
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+#biography h2{
+	margin-bottom: 10px;
+}
+#biography h2 .aboutInfo{
+	font-weight: normal;
+}
+
+/* ICONS */
+.mail-icon{
+	color: #ab2421;
+}
+.facebook-icon{
+	color: #0F90F2;
+}
+.linkedin-icon{
+	color: #0A66C2;
+}
+.portfolio-icon{
+	color: #00806ee0;
+}
+
+#biography h2 a{
+	color:#000;
+}
+#biography h2 a:hover{
+	color:#FF0080;
+	border-bottom: 2px solid #FF0080;
+}
+
+/*---------------------------------------------------- LOGIN --------------------------------------- */
+#loginMain{
+	width: 75%;
+	margin: 50px auto;
+	border: 2px solid #dadada;
+	box-sizing: border-box;
+	padding: 30px 30px;
+	display:flex;
+	justify-content:space-between;
+}
+#login{
+	width: 40%;
+	text-align: center;
+}
+#login h1{
+	font-size: 38px;
+	margin-bottom: 20px;
+}
+.formStyle{
+	width: 100%;
+}
+.formStyle input{
+	display: block;
+	width: 100%;
+	font-size: 18px;
+	padding: 5px;
+	box-sizing: border-box;
+	margin: 15px 0px;
+}
+
+.formStyle input:focus{
+	border: 2px solid #FF0080;
+	outline:none;
+}
+.formStyle input[type=submit]{
+	width: 100%;
+	border: 3px solid #808080;
+	background-color:#FFF;
+	color: #525252;
+}
+.formStyle input[type=submit]:hover{
+	border:3px solid #FF0080;
+	color:#FF0080;
+}
+.formStyle p{
+	font-size: 22px;
+	color: #525252;
+	text-align: center;
+}
+.formStyle .googleAccount{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	margin: 10px 0px;
+	background-color:#fb45a0;
+}
+.formStyle .googleAccount p{
+	color: #FFF;
+}
+.formStyle .googleAccount:hover{
+	background-color:#FF0080;
+	cursor: pointer;
+}
+#register{
+	width: 60%;
+	box-sizing: border-box;
+	padding: 20px 0px;
+	padding-left: 75px;
+	margin-left: 75px;
+	padding-right:20px;
+	border-left: 3px solid #dadada;
+}
+#register h2{
+	font-size: 28px;
+}
+
+.loginCheckbox{
+	margin-left: 0px;
+}
+
+.loginCheckbox input{
+	width: 28px;
+	height: 28px;
+	margin:0px;
+}
+
+/* ANIMATIONS */
+@keyframes sloganFadeIn{
+	0% { bottom:0%; opacity:0.0;}
+	100%{bottom: 10%; opacity:1.0;}
+}
+@keyframes topFadeIn{
+	0% { top:96px; opacity:0.0;}
+	100%{top: 0px; opacity:1.0;}
+}
+
+/*CUSTOM CLASSES */
+.unselectable{
+	-webkit-user-select: none;
+   -moz-user-select: none;     
+   -ms-user-select: none;
+}
+.invisible{
+	visibility: hidden;
+}
+#top.disable-animation{
+	animation:none;
+}
+button{
+    display:left;
+
+}
