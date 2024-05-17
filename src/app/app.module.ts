@@ -9,14 +9,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { ChekoutComponent } from './chekout/chekout.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,MangaComponent, NavbarComponent, FooterComponent, CartComponent, ChekoutComponent,
+    AppComponent,MangaComponent, NavbarComponent, FooterComponent, CartComponent, ChekoutComponent, LoginComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule
+    AppRoutingModule,HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideClientHydration()

@@ -5,13 +5,16 @@ import { CartService } from '../../service/Cart.service';
 import { Init } from 'node:v8';
 import { Router } from '@angular/router';
 import { error } from 'node:console';
+import { AppStateService } from '../app-state.service';
 @Component({
   selector: 'app-root',
   templateUrl: './Manga.component.html',
   styleUrls: ['./Manga.component.css']
 })
 export class MangaComponent implements OnInit {
-  constructor(private mangaService: MangaService,private cartservice:CartService) {}
+  constructor(private mangaService: MangaService,private cartservice:CartService,
+              private appstate: AppStateService
+  ) {}
 
 
 
@@ -20,7 +23,7 @@ export class MangaComponent implements OnInit {
   }
   mangaList: Manga[]=[];
 
-  userId = 1;
+  userId = this.appstate.UsesState.UserId;
 
 
   ngOnInit(): void {
