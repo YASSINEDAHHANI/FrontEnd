@@ -11,16 +11,20 @@ import { CartComponent } from './cart/cart.component';
 import { ChekoutComponent } from './chekout/chekout.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { RouterModule } from '@angular/router';
+import { AddMangaComponent } from './add-manga/add-manga.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
-    AppComponent,MangaComponent, NavbarComponent, FooterComponent, CartComponent, ChekoutComponent, LoginComponent,
+    AppComponent,MangaComponent, NavbarComponent, FooterComponent, CartComponent, ChekoutComponent, LoginComponent, RegisterComponent, AddMangaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,RouterModule, MatPaginatorModule
   ],
   providers: [
     provideClientHydration()

@@ -14,7 +14,9 @@ export class AuthService {
   public login(signinReq:any):Observable<any>{
     return this.http.post(`${this.baseUrl}/login`, signinReq);
   }
-
+  public register(singupRequest:any):Observable<any>{
+    return this.http.post(`${this.baseUrl}/register`,singupRequest);
+  }
 
 
 }

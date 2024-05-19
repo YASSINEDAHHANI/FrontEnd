@@ -18,6 +18,10 @@ export class MangaService {
       createManga(manga: Manga): Observable<Manga> {
         return this.http.post<Manga>(this.baseUrl, manga);
       }
+      updateManga(manga: Manga):Observable<Manga> {
+        const url = `${this.baseUrl}/${manga.number}`;
+        return this.http.put<Manga>(url, manga);
+      }
     
       deleteManga(id: number): Observable<void> {
         const url = `${this.baseUrl}/${id}`;

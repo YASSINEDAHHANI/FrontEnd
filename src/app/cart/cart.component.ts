@@ -13,9 +13,7 @@ import { AppStateService } from '../app-state.service';
 })
 export class CartComponent implements OnInit {
   //appstate: any;
-HandelDelete(arg0: number) {
-throw new Error('Method not implemented.');
-}
+
   selectedManga: Manga []=[];
   constructor(private cartService: CartService,private mangaService: MangaService,private appstate: AppStateService){}
   userId= this.appstate.UsesState.UserId;;
@@ -31,6 +29,17 @@ throw new Error('Method not implemented.');
       }
     );
   }
-  
+  HandelDelete(itemId: number) {
+    this.cartService.deleteCart(itemId).subscribe(
+      () => {
+        
+        this.selectedManga = this.selectedManga.filter(item => item.number !== itemId);
+      },
+      (error: any) => {
+        console.error("Error deleting item from cart:", error);
+      }
+    );
+    
+    }
 
 }

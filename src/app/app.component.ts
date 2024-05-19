@@ -7,8 +7,7 @@ import { MangaService } from '../service/Manga.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
- 
-
+  title="MangaFront";
   
 }
 

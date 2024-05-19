@@ -2,31 +2,26 @@
     <div id="topWrapper">
         <div id="top" class="disable-animation">
             <div id="logo">
-                <a href="index.html" title="Home"><img src="Luffy.jpg" alt="Logo"/></a>
+               <a routerLink="/" title="Home"><img src="../../assets/ll.png" alt="Logo"/></a>
             </div>
             <div id="searchAndLoginWrapper">
                 <div id="loginWrapper">
                     <a id="cart" routerLink="/cart">My cart <i class="fas fa-shopping-cart"></i></a>
-                    <a id="signUp" href="#">Sign up</a>
+                    <a id="signUp" routerLink="/register">Sign up</a>
                     <a id="login"routerLink="/login">Login</a>
                 </div>
-                <div class="cleaner"></div>
                 <div id="searchWrapper">
                     <form action="">
                         <input type="search" id="search" placeholder="search" autocomplete="off" />
                         <button id="btnSearch" type="submit"><i class="fas fa-search"></i></button>
-                        <div class="cleaner"></div>
                     </form>
                 </div>
             </div>
             <nav id="headerNav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="free-artwork.html">Free Artwork</a></li>
+                    <li><a routerLink="/">Home</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a class="currentPage" href="about.html">About</a></li>
-                    <div class="cleaner"></div>
                 </ul>
             </nav>
         </div>
