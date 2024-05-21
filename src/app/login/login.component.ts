@@ -33,6 +33,11 @@ export class LoginComponent implements OnInit {
           console.log(this.loginForm.value);
             this.authService.login(this.loginForm.value).subscribe(
               data => {
+                if (data.email === "admin@admin" && data.password === "admin") {
+                  this.router.navigateByUrl('/update');
+              } else {
+                  this.router.navigateByUrl('/');
+              }
                 this.router.navigateByUrl(`/`);
                 this.appstate.setUsesState({
                   isAuthenticated:true,

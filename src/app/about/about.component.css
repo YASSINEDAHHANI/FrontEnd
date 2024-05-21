@@ -1,0 +1,57 @@
+
+#aboutMain{
+	width: 80%;
+	box-sizing: border-box;
+	border: 3px solid #dadada;
+	margin: 50px auto;
+	padding: 40px 50px;
+	display: flex;
+	justify-content:space-between;
+}
+
+#profileImage{
+	width: 28%;
+}
+#profileImage img{
+	width: 100%;
+	box-shadow: 0px 0px 15px #808080;
+}
+#biography{
+	width: 70%;
+}
+#biography h1{
+	text-align: center;
+	margin-bottom: 20px;
+}
+#biography p{
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+#biography h2{
+	margin-bottom: 10px;
+}
+#biography h2 .aboutInfo{
+	font-weight: normal;
+}
+
+/* ICONS */
+.mail-icon{
+	color: #ab2421;
+}
+.facebook-icon{
+	color: #0F90F2;
+}
+.linkedin-icon{
+	color: #0A66C2;
+}
+.portfolio-icon{
+	color: #00806ee0;
+}
+
+#biography h2 a{
+	color:#000;
+}
+#biography h2 a:hover{
+	color:#FF0080;
+	border-bottom: 2px solid #FF0080;
+}

@@ -5,23 +5,25 @@
                <a routerLink="/" title="Home"><img src="../../assets/ll.png" alt="Logo"/></a>
             </div>
             <div id="searchAndLoginWrapper">
-                <div id="loginWrapper">
+                <div *ngIf="this.appstate.UsesState.isAuthenticated==false" id="loginWrapper">
                     <a id="cart" routerLink="/cart">My cart <i class="fas fa-shopping-cart"></i></a>
                     <a id="signUp" routerLink="/register">Sign up</a>
                     <a id="login"routerLink="/login">Login</a>
+                    
                 </div>
-                <div id="searchWrapper">
-                    <form action="">
-                        <input type="search" id="search" placeholder="search" autocomplete="off" />
-                        <button id="btnSearch" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                <div *ngIf="this.appstate.UsesState.isAuthenticated" id="loginWrapper">
+                    <a id="cart" routerLink="/cart"> <i class="fas fa-shopping-cart"></i></a>
+                    <a id="signUp" routerLink="/register">{{this.appstate.UsesState.UserEmail}}</a>
+                    <a id="login"routerLink="/login">Logout</a>
                 </div>
+              
             </div>
             <nav id="headerNav">
-                <ul>
-                    <li><a routerLink="/">Home</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a class="currentPage" href="about.html">About</a></li>
+                <ul class="hi">
+                    <li><a class="currentPage" routerLink="/">Home</a></li>
+                    <li><a routerLink="/orders">Orders</a></li>
+                    <li><a routerLink="/contact">Contact</a></li>
+                    <li><a  routerLink="/about">About</a></li>
                 </ul>
             </nav>
         </div>

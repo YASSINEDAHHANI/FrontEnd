@@ -1,26 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../service/Cart.service'; 
-import { MangaService } from '../../service/Manga.service'; 
-import { MangaComponent } from '../manga/Manga.component';
+import { CartService } from '../../service/Cart.service';
+import { MangaService } from '../../service/Manga.service';
 import { Manga } from '../Models/Manga';
-import { error } from 'console';
 import { AppStateService } from '../app-state.service';
-
+import { Order } from '../Models/Order';
+import { OrderService } from '../order.service';
+import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  //appstate: any;
 
-  selectedManga: Manga []=[];
-  constructor(private cartService: CartService,private mangaService: MangaService,private appstate: AppStateService){}
-  userId= this.appstate.UsesState.UserId;;
-  
+
+  selectedManga: Manga[] = [];
+  userId: number;
+  toastVisible: boolean = false;
+  order: Order | null = null;
+  constructor(
+    private cartService: CartService,
+    private mangaService: MangaService,
+    private appState: AppStateService,
+    private orderService: OrderService,private orderservice: OrderService,
+    private router: Router
+  ) {
+    this.userId = this.appState.UsesState.UserId;
+  }
+
   ngOnInit(): void {
+    this.loadCart();
+  }
+
+  loadCart(): void {
     this.cartService.getCartById(this.userId).subscribe(
-      (cart:any) => {
+      (cart: any) => {
         this.selectedManga = cart; 
         console.log("Cart:", cart);
       },
@@ -29,17 +43,28 @@ export class CartComponent implements OnInit {
       }
     );
   }
-  HandelDelete(itemId: number) {
-    this.cartService.deleteCart(itemId).subscribe(
+
+  handleDelete(mangaId: number): void {
+    this.cartService.deleteMangaFromCart(this.userId, mangaId).subscribe(
       () => {
-        
-        this.selectedManga = this.selectedManga.filter(item => item.number !== itemId);
+        this.loadCart();
       },
       (error: any) => {
-        console.error("Error deleting item from cart:", error);
+        console.error("Error deleting manga from cart:", error);
       }
     );
-    
+  }
+  HandleCheckout(): void {
+      this.orderService.saveOrder(this.userId).subscribe(
+        (data) => {
+          console.log(data);
+          this.router.navigateByUrl('/order')
+        },
+        (error: any) => {
+          console.error("Error saving order:", error);
+        }
+      );
     }
-
+  
+  
 }

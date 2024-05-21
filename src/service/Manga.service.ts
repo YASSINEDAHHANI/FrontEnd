@@ -5,6 +5,9 @@ import { Manga } from "../app/Models/Manga";
 
 @Injectable({providedIn: 'root'})
 export class MangaService {
+  searchManga(searchQuery: string) {
+    throw new Error('Method not implemented.');
+  }
     private baseUrl='http://localhost:8082/api/manga';
     constructor(private http:HttpClient) {}
     getAllManga(): Observable<Manga[]> {

@@ -5,6 +5,7 @@ import { CartService } from '../../service/Cart.service';
 import { Init } from 'node:v8';
 import { Router } from '@angular/router';
 import { error } from 'node:console';
+import { ToastrService } from 'ngx-toastr';
 import { AppStateService } from '../app-state.service';
 @Component({
   selector: 'app-root',
@@ -12,9 +13,9 @@ import { AppStateService } from '../app-state.service';
   styleUrls: ['./Manga.component.css']
 })
 export class MangaComponent implements OnInit {
-  constructor(private mangaService: MangaService,private cartservice:CartService,
-              private appstate: AppStateService
-  ) {}
+  
+
+  constructor(private mangaService: MangaService,private cartservice:CartService,private appstate: AppStateService,private toastr: ToastrService) {}
 
 
 
@@ -85,16 +86,18 @@ export class MangaComponent implements OnInit {
     }
   }*/
   HandleCart(mangaNumber: number): void {
-    // if (selectedManga) {
-    //   this.mangaService.setSelectedManga(selectedManga);
+
       this.cartservice.addToCart(mangaNumber,this.userId).subscribe(
         {
-          next:(data:any)=> console.log(data),
+          next: (data: any) => {
+              console.log(data);
+              console.log(data);
+          },
           error: err => console.log(err)
-        }
+      }
       );
     }
-    // console.log(selectedManga);
+
 
   }
 

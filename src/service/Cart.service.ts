@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cart } from '../app/Models/Cart';
 import { Manga } from '../app/Models/Manga';
+import { Order } from '../app/Models/Order';
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +30,8 @@ export class CartService {
   deleteCart(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+  deleteMangaFromCart(userId: number, mangaId: number): Observable<void> {
+    return this.http.request<void>('delete', `${this.baseUrl}/${userId}`, { body: mangaId });
+  }
+
 }

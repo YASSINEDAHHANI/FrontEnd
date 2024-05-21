@@ -2,6 +2,31 @@
 	margin: 0px;
 	padding: 0px;
 }
+/* Toastr Styles */
+.toast {
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.toast-success {
+    background-color: #5cb85c;
+}
+
+.toast-error {
+    background-color: #d9534f;
+}
+
+.toast-info {
+    background-color: #5bc0de;
+}
+
+.toast-warning {
+    background-color: #f0ad4e;
+}
+
+.toast-progress {
+    height: 2px;
+}
 
 html{
 	height: 100%;
