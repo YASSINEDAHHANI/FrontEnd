@@ -17,7 +17,9 @@ const routes: Routes = [
   {path:"update",component:AddMangaComponent},
   {path:"contact",component:ContactComponent},
   {path:"about",component:AboutComponent},
-  { path: 'orders/:orderId', component: OrderComponent  }
+  { path: 'orders', component: OrderComponent },
+  { path: '', redirectTo: '/cart', pathMatch: 'full' },
+  { path: '**', redirectTo: '/cart' }
 
 ];
 

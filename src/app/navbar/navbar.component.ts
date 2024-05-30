@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {  EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 import { AppStateService } from '../app-state.service';
 import { Manga } from '../Models/Manga';
 import { MangaService } from '../../service/Manga.service';

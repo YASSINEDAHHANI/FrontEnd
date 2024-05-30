@@ -30,21 +30,23 @@ export class LoginComponent implements OnInit {
 
     HandleLogin(){
         if(this.loginForm.valid){
-          console.log(this.loginForm.value);
+          console.log(this.loginForm.value.password);
             this.authService.login(this.loginForm.value).subscribe(
               data => {
-                if (data.email === "admin@admin" && data.password === "admin") {
-                  this.router.navigateByUrl('/update');
-              } else {
-                  this.router.navigateByUrl('/');
-              }
-                this.router.navigateByUrl(`/`);
+                console.log(data);
                 this.appstate.setUsesState({
                   isAuthenticated:true,
                   UserId: data.id,
                   UserEmail: data.email,
                   CartList:data.cart,
                 })
+                if(data.role === 'ADMIN'){
+                  this.router.navigateByUrl(`/update`);
+                }else{
+                  this.router.navigateByUrl(`/`);
+                }
+                
+               
               }, err => {
                 console.log(err);
               }

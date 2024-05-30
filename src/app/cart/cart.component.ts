@@ -55,15 +55,15 @@ export class CartComponent implements OnInit {
     );
   }
   HandleCheckout(): void {
-      this.orderService.saveOrder(this.userId).subscribe(
-        (data) => {
-          console.log(data);
-          this.router.navigateByUrl('/order')
-        },
-        (error: any) => {
-          console.error("Error saving order:", error);
-        }
-      );
+    this.orderService.saveOrder(this.userId).subscribe(
+      (order: Order) => {
+        console.log(order);
+        this.loadCart();
+      },
+      (error: any) => {
+        console.error("Error saving order:", error);
+      }
+    );
     }
   
   

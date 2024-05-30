@@ -1,20 +1,18 @@
-<div *ngIf="order">
-    <h2>Order Details</h2>
-    <p><strong>Order Number:</strong> {{ order.orderNumber }}</p>
-    <p><strong>Total:</strong> {{ order.totalPrice }}</p>
-  
-    <h3>Manga List</h3>
-    <ul>
-      <li *ngFor="let manga of order.mangaList">
-        <p><strong>Title:</strong> {{ manga.title }}</p>
-        <p><strong>Price:</strong> {{ manga.price }}</p>
-        <p><strong>Quantity:</strong> {{ manga.description }}</p>
-      </li>
-    </ul>
-  </div>
-  
-  <div *ngIf="!order">
-    <div> </div>
-    <p>Loading order details...</p>
-  </div>
-  
+<!-- order.component.html -->
+<div class="order-container" *ngFor="let order of this.orders">
+  <h2>Order Details</h2>
+  <p>Order ID: {{ order.id }}</p>
+  <p>Order Number: {{ order.orderNumber }}</p>
+  <p>Total Price: {{ order.totalPrice | currency }}</p>
+
+  <h3>Mangas in this Order</h3>
+  <ul>
+    <li *ngFor="let manga of order.mangaList">
+      <span class="manga-title">{{ manga.title }}</span> - <span class="manga-price">{{ manga.price | currency }}</span>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!this.orders" class="loading">
+  <p>Loading order details...</p>
+</div>

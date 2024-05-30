@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Order } from '../Models/Order';
 import { OrderService } from '../order.service';
+import { AppStateService } from '../app-state.service';
 
 @Component({
   selector: 'app-order',
@@ -9,11 +10,12 @@ import { OrderService } from '../order.service';
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-  order: Order | null = null;
+  orders:any =[];
 
   constructor(
     private route: ActivatedRoute,
-    private orderService: OrderService
+    private orderService: OrderService,
+    public appstate: AppStateService
   ) { }
 
   ngOnInit(): void {
@@ -21,15 +23,15 @@ export class OrderComponent implements OnInit {
   }
 
   loadOrderDetails(): void {
-    const orderId: number = Number(this.route.snapshot.paramMap.get('orderId'));
-    this.orderService.getOrderDetails(orderId).subscribe(
+    const orderId = Number(this.route.snapshot.paramMap.get('orderId'));
+   
+    this.orderService.getOrdersByUser(this.appstate.UsesState.UserId).subscribe(
       (order: Order) => {
-        this.order = order;
-        console.log("Order details:", order);
+        this.orders= order
       },
       (error: any) => {
         console.error("Error fetching order details:", error);
       }
     );
-  }
+}
 }
